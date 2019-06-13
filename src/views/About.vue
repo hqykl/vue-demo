@@ -3,6 +3,17 @@
     <div class="answer-num">
       <p class="answer-num-text">题目{{ itemNum }}</p>
     </div>
+    <div class="content">
+      <div class="awser-block">
+        <h6 class="title">{{getAnswer[itemNum-1].topic_name }}</h6>
+        <ol class="answer-list">
+          <li v-for="(item,index) in getAnswer[itemNum-1].topic_answer" :key="item.topic_id">
+            {{ index }}
+            {{ item.answer_name }}
+          </li>
+        </ol>
+      </div>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -33,10 +44,28 @@
       left: 50%;
       transform: translateX(-50%);
       top: 20%;
-      width: 526px;
-      height: 465px;
-      // background: url('../assets/1-2.png') no-repeat;
-      // background-size: 526px auto;
+      width: 626px;
+      height: 600px;
+      background: url('../assets/2-1.png') no-repeat;
+      background-size: 626px auto;
+      color: #eee;
+      text-align: left;
+    }
+    .title {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 400;
+    }
+    .awser-block {
+      position: absolute;
+      left: 50%;
+      top: 50px;
+      transform: translateX(-50%);
+      width: 400px;
+    }
+    .answer-list {
+      padding: 0;
+      list-style: none;
     }
   }
 </style>
